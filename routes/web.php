@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/', [DashboardController::class, 'dashboard']);
+
+Route::get('/', [WebsiteController::class, 'webhome'])->name('webhome');
+
+Route::get('/admin', [DashboardController::class, 'dashboard']);

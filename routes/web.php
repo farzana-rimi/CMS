@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+
 use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,9 +29,11 @@ Route::group(['middleware'=>'auth'],function(){
 
     Route::get('/admin', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
+    
+    //for category
+    Route::get('/category-list', [CategoryController::class, 'list'])->name('category.list');
    
 
-    //for post
-    Route::resource('post', PostController::class);
+
 
 });

@@ -37,4 +37,9 @@ class DashboardController extends Controller
 
     return redirect()->back()->withErrors($validate->message());
 }
+
+public function logout(){
+    auth()->logout();
+    return redirect()->route('login')->withSuccess('Logged Out');
+}
 }

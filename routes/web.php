@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,7 +33,7 @@ Route::group(['middleware'=>'auth'],function(){
     //for category
     Route::get('/category-list', [CategoryController::class, 'list'])->name('category.list');
    
-
-
+  //for post
+  Route::resource('post', PostController::class);
 
 });

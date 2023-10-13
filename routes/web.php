@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WebsiteController::class, 'webhome'])->name('webhome');
 Route::get('/show/post/{id}', [WebsiteController::class, 'showpost'])->name('singlepost.show');
+Route::get('/latest/post', [WebsiteController::class, 'latestpost'])->name('latest.post');
 
 
 

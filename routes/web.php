@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [WebsiteController::class, 'webhome'])->name('webhome');
+Route::get('/show/post/{id}', [WebsiteController::class, 'showpost'])->name('singlepost.show');
 
 
 

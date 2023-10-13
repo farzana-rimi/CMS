@@ -56,7 +56,7 @@
                     <!-- Post preview-->
                     @foreach($posts as $data)
                     <div class="post-preview">
-                        <a href="post.html">
+                        <a href="{{route('singlepost.show',$data->id)}}">
                             <h2 class="post-title">{{$data->title}}</h2>
                             <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
                             <img src="{{url('/uploads/'.$data->gallery->image)}}" width=60 alt="image">
@@ -74,10 +74,13 @@
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Pager-->
+                    {{$posts->links()}}
                     <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
                 </div>
             </div>
         </div>
+        
+      
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">

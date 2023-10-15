@@ -17,7 +17,7 @@ class UserTableSeeder extends Seeder
 
             'name'=>'Admin',
             'email'=>'admin@gmail.com',
-            'type'=>'admin',
+            'image'=>'https://img.freepik.com/premium-vector/monogram-initial-letter-with-feather-pen-author-logo-design-template_340145-78.jpg?w=740',           'type'=>'admin',
             'password'=>bcrypt('13579'),
 
         ]);

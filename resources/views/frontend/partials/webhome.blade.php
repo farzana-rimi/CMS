@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Blogs</title>
+        <title>Article Hub</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -33,10 +33,13 @@
                             
     
                  
+
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('latest.post')}}">Latest Posts</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('about')}}">About</a></li>
                         
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('contact')}}">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('register')}}">Register</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('weblogin')}}">Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -49,6 +52,10 @@
                         <div class="site-heading">
                             <h1>Article Hub</h1>
                             <span class="subheading">Knowledge is power.</span>
+                        </div>
+                        <div class="site-heading">
+                            <h1></h1>
+                            <span class="subheading">Register to create a post</span>
                         </div>
                     </div>
                 </div>

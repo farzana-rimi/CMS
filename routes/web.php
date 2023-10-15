@@ -24,6 +24,10 @@ Route::get('/show/post/{id}', [WebsiteController::class, 'showpost'])->name('sin
 Route::get('/latest/post', [WebsiteController::class, 'latestpost'])->name('latest.post');
 Route::get('/contact', [WebsiteController::class, 'contact'])->name('contact');
 Route::get('/about', [WebsiteController::class, 'about'])->name('about');
+Route::get('/user/register', [WebsiteController::class, 'register'])->name('register');
+Route::post('/reg/store', [WebsiteController::class, 'registore'])->name('regi.store');
+Route::get('/web/login', [WebsiteController::class, 'weblogin'])->name('weblogin');
+Route::post('/do/web/login', [WebsiteController::class, 'doweblogin'])->name('doweblogin');
 
 
 

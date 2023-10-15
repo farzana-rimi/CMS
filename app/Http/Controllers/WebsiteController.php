@@ -109,6 +109,11 @@ class WebsiteController extends Controller
 
     }
 
+    public function weblogout(){
+        auth()->logout();
+        return redirect()->route('webhome');
+    }
+
 
     
     

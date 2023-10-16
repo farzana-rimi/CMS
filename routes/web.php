@@ -47,4 +47,7 @@ Route::group(['middleware'=>'auth'],function(){
   //for post
   Route::resource('post', PostController::class);
 
+  Route::get('/post/accept/{id}',[PostController::class,'postaccept'])->name('post.accept');
+  Route::get('/post/reject/{id}',[PostController::class,'postreject'])->name('post.reject');
+
 });

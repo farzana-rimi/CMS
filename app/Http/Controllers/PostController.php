@@ -111,4 +111,21 @@ class PostController extends Controller
     {
         //
     }
+
+    public function postaccept($id)
+    {
+        $post=Post::find($id);
+
+        $post->is_publish='publish';
+        $post->save();
+        return redirect()->back()->with('message','post published');
+    }
+    public function postreject($id)
+    {
+        $post=Post::find($id);
+
+        $post->is_publish='rejected';
+        $post->save();
+        return redirect()->back()->with('message','post rejected');
+    }
 }

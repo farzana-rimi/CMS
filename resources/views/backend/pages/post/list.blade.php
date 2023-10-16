@@ -19,6 +19,8 @@
       <th scope="col">In Publish</th>
       <th scope="col">Posted by</th>
       <th scope="col">Action</th>
+      <th scope="col">Accept</th>
+      <th scope="col">Reject</th>
     </tr>
   </thead>
   <tbody>
@@ -38,6 +40,14 @@
         <a href="{{route('post.show', $data->id)}}" class="btn btn-info my-2">View</a>
         <a href="{{route('post.destroy', $data->id)}}" class="btn btn-danger my-2">Delete</a>
         <a href="{{route('post.edit',$data->id)}}" class="btn btn-success my-2">Edit</a>
+     
+      </td>
+      <td>
+      <a href="{{route('post.accept', $data->id)}}" class="btn btn-primary my-2">Accept</a>
+     
+      </td>
+      <td>
+      <a href="{{route('post.reject',$data->id)}}" class="btn btn-danger my-2">Reject</a>
       </td>
     </tr>
     @endforeach

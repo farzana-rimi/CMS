@@ -7,18 +7,28 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('webhome')}}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('web.logout')}}">Logout</a></li>
-                     
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('latest.post')}}">Latest Posts</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('about')}}">About</a></li>
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                       
 
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('contact')}}">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('register')}}">Register</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('weblogin')}}">Login</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="">Logout</a></li>
-                    </ul>
+                            
+    
+                       <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('webhome')}}">Home</a></li>
+                           <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Category</a></li>
+                           <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('latest.post')}}">Latest Posts</a></li>
+                           <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('about')}}">About</a></li>
+                             
+                           <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('contact')}}">Contact</a></li>
+                       @if(auth()->user())
+                           <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('web.logout')}}">Logout</a></li>
+                           <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('create.post')}}">Create Post</a></li>
+                         @else
+                        
+                         
+                           <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('register')}}">Register</a></li>
+                           <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('weblogin')}}">Login</a></li>
+                          
+                           @endif
+                       </ul>
                 </div>
             </div>
         </nav>

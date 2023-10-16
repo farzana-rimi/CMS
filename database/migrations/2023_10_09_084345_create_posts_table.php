@@ -17,7 +17,9 @@ return new class extends Migration
             $table->foreignId('gallery_id')->constrained();
             $table->string('title');
            $table->text('description');
-           $table->string('posted_by');
+           $table->string('name');
+           $table->string('profession');
+           $table->string('institute');
            $table->string('is_publish')->default('draft'); //0 for draft and 1 for published
             $table->timestamps();
         });

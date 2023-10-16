@@ -41,8 +41,10 @@ class PostController extends Controller
                 'gallery'=>'required',
                 'title'=>'required',
                 'description'=>'required',
+                'name'=>'required',
+                'profession'=>'required',
+                'institute'=>'required',
                 'is_publish'=>'required',
-                'posted_by'=>'required',
 
         ]);
 
@@ -68,8 +70,10 @@ class PostController extends Controller
             'gallery_id'=>$gallery->id,
             'title'=>$request->title,
             'description'=>$request->description,
-            'is_publish'=>$request->is_publish,
-            'posted_by'=>$request->posted_by
+            'name'=>$request->is_publish,
+            'profession'=>$request->profession,
+            'institute'=>$request->institute,
+            'is_publish'=>$request->is_publish
         ]);
 
       

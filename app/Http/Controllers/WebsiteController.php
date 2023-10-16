@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Gallery;
 use App\Models\Post;
 use App\Models\User;
 
@@ -25,7 +26,8 @@ class WebsiteController extends Controller
     }
     
     public function latestpost(){
-        $latestpost=Post::where('is_publish','=','publish')->orderby('id','desc')->take(2)->get();
+        // $latestpost=Post::where('is_publish','=','publish')->orderby('id','desc')->take(2)->get();
+        $latestpost=Post::where('is_publish','=','publish')->orderByDesc('id')->take(2)->get();
         return view('frontend.pages.post.latest',compact('latestpost'));
     }
 
@@ -75,7 +77,7 @@ class WebsiteController extends Controller
             // 'image'=>$fileName,
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
-            'type'=>$request->profession,
+            'type'=>$request->profession
            
         ]);
 
@@ -113,7 +115,59 @@ class WebsiteController extends Controller
         auth()->logout();
         return redirect()->route('webhome');
     }
+    
+    public function createpost(){
+        $categories=Category::all();
+        return view('frontend.pages.post.createpost',compact('categories'));
+    }
 
+    public function poststore(Request $request)
+    {
+        $validate=Validator::make($request->all(),[
+
+                'category'=>'required',
+                'gallery'=>'required',
+                'title'=>'required',
+                'description'=>'required',
+                'name'=>'required',
+                'profession'=>'required',
+                'institute'=>'required',
+
+        ]);
+
+        if($validate->fails()){
+            return redirect()->back();
+        }
+
+        $fileName='';
+        if($request->hasFile('gallery'))
+        {
+            $fileName=date('Ymdhis').'.'.$request->file('gallery')->getClientOriginalExtension();
+            $request->file('gallery')->storeAs('/uploads',$fileName);
+
+            $gallery=Gallery::create([
+
+                'image'=>$fileName
+            ]);
+        }
+
+        Post::create([
+
+            'category_id'=>$request->category,
+            'gallery_id'=>$gallery->id,
+            'title'=>$request->title,
+            'description'=>$request->description,
+            'name'=>$request->name,
+            'profession'=>$request->profession,
+            'institute'=>$request->institute
+        ]);
+
+      
+        return redirect()->route('webhome');
+    }
+
+
+    
 
     
     

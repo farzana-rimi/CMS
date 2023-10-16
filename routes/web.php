@@ -29,6 +29,8 @@ Route::post('/reg/store', [WebsiteController::class, 'registore'])->name('regi.s
 Route::get('/web/login', [WebsiteController::class, 'weblogin'])->name('weblogin');
 Route::post('/do/web/login', [WebsiteController::class, 'doweblogin'])->name('doweblogin');
 Route::get('/web/logout', [WebsiteController::class, 'weblogout'])->name('web.logout');
+Route::get('/create/post', [WebsiteController::class, 'createpost'])->name('create.post');
+Route::post('/createpost/store', [WebsiteController::class, 'poststore'])->name('createpost.store');
 
 
 

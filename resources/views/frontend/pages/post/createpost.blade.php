@@ -1,7 +1,7 @@
-@extends('backend.partials.master')
+@extends('frontend.partials.webmaster')
 @section('content')
 
-<form action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
+<form action="{{route('createpost.store')}}" method="post" enctype="multipart/form-data">
     @csrf
        <div class="row">
            <div class="col-md-2"></div>
@@ -25,8 +25,8 @@
                <div>
                    <label for="">Publish</label>
                    <select name="is_publish" id="" class="form-control">
-                       <option value="publish">Publish</option>
-                       <option value="draft">Draft</option>
+                       <!-- <option value="publish">Publish</option> -->
+                       <option value="draft">publish</option>
                    </select>
                </div>
 

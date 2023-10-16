@@ -26,8 +26,8 @@ class WebsiteController extends Controller
     }
     
     public function latestpost(){
-        // $latestpost=Post::where('is_publish','=','publish')->orderby('id','desc')->take(2)->get();
-        $latestpost=Post::where('is_publish','=','publish')->orderByDesc('id')->take(2)->get();
+        $latestpost=Post::where('is_publish','=','publish')->orderby('id','desc')->take(2)->get();
+      
         return view('frontend.pages.post.latest',compact('latestpost'));
     }
 

@@ -17,7 +17,7 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input name="name" type="text" id="form3Example1c" class="form-control" />
+                      <input name='name' type="text" id="form3Example1c" class="form-control" />
                       <label class="form-label" for="form3Example1c">Your Name</label>
                     </div>
                   </div>
@@ -25,7 +25,7 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input name="email" type="email" id="form3Example3c" class="form-control" />
+                      <input name='email' type="email" id="form3Example3c" class="form-control" />
                       <label class="form-label" for="form3Example3c">Your Email</label>
                     </div>
                   </div>
@@ -33,7 +33,7 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input name="password" type="password" id="form3Example4c" class="form-control" />
+                      <input  name='password' type="password" id="form3Example4c" class="form-control" />
                       <label class="form-label" for="form3Example4c">Password</label>
                     </div>
                   </div>
@@ -41,8 +41,23 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input name="profession" type="text" id="form3Example1c" class="form-control" />
+                      <input  name='profession' type="text" id="form3Example1c" class="form-control" />
                       <label class="form-label" for="form3Example1c">Profession</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input  name='institute' type="text" id="form3Example1c" class="form-control" />
+                      <label class="form-label" for="form3Example1c">Institute</label>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input  name='country' type="text" id="form3Example1c" class="form-control" />
+                      <label class="form-label" for="form3Example1c">Country</label>
                     </div>
                   </div>
                   <!-- <div>

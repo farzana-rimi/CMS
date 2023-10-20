@@ -21,6 +21,7 @@
                        @if(auth()->user())
                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('web.logout')}}">Logout</a></li>
                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('create.post')}}">Create Post</a></li>
+                           <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('user.profile')}}">My Profile</a></li>
                          @else
                         
                          

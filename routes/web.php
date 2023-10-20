@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\WebsiteController;
@@ -31,7 +32,11 @@ Route::post('/do/web/login', [WebsiteController::class, 'doweblogin'])->name('do
 Route::get('/web/logout', [WebsiteController::class, 'weblogout'])->name('web.logout');
 Route::get('/create/post', [WebsiteController::class, 'createpost'])->name('create.post');
 Route::post('/createpost/store', [WebsiteController::class, 'poststore'])->name('createpost.store');
+Route::get('/user/profile', [WebsiteController::class, 'userprofile'])->name('user.profile');
 
+
+//for comment
+Route::post('/comment/{postId}',[CommentController::class,'comment'])->name('comment');
 
 
 Route::get('/admin/login', [DashboardController::class, 'adminlogin'])->name('login');

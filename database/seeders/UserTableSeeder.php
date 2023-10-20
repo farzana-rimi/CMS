@@ -17,9 +17,11 @@ class UserTableSeeder extends Seeder
 
             'name'=>'Admin',
             'email'=>'admin@gmail.com',
-            'image'=>'https://img.freepik.com/premium-vector/monogram-initial-letter-with-feather-pen-author-logo-design-template_340145-78.jpg?w=740',           'type'=>'admin',
+            'image'=>'https://img.freepik.com/premium-vector/monogram-initial-letter-with-feather-pen-author-logo-design-template_340145-78.jpg?w=740',           
             'password'=>bcrypt('13579'),
-            'type'=>'admin'
+            'profession'=>'admin',
+            'institute'=>'ArticleHub',
+            'country'=>'Bangladesh'
 
         ]);
     }

@@ -14,9 +14,12 @@
                         </a>
                         <p class="post-meta">
                             Posted by
-                            <a href="#!">{{$data->posted_by}}</a>
+                            {{$data->name}}
+                            <br>
+                            {{$data->institute}}
+                         {{$data->profession}}
                          {{$data->created_at}}
-                        </p>
+                         </p>
                     </div>
                     @endforeach
                     <!-- Divider-->

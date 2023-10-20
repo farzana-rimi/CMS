@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Gallery;
 use App\Models\Post;
 use App\Models\User;
@@ -22,7 +23,10 @@ class WebsiteController extends Controller
     public function showpost($id){
 
         $post=Post::find($id);
-        return view('frontend.pages.post.singlepost',compact('post'));
+        $comment=Comment::where('post_id',$post->id)->get();
+        return view('frontend.pages.post.singlepost',compact('post','comment'));
+    
+        
     }
     
     public function latestpost(){
@@ -51,9 +55,13 @@ class WebsiteController extends Controller
 
                 'name'=>'required',
                 'email'=>'required',
-                // 'user_image'=>'required',
-                'password'=>'required',
                 'profession'=>'required',
+                'institute'=>'required',
+                'country'=>'required',
+                'password'=>'required',
+                    // 'user_image'=>'required',
+            
+               
               
 
         ]);
@@ -74,10 +82,14 @@ class WebsiteController extends Controller
         User::create([
 
             'name'=>$request->name,
-            // 'image'=>$fileName,
             'email'=>$request->email,
-            'password'=>bcrypt($request->password),
-            'type'=>$request->profession
+            'profession'=>$request->profession,
+            'institute'=>$request->institute,
+            'country'=>$request->country,
+            'password'=>bcrypt($request->password)
+            // 'image'=>$fileName,
+           
+
            
         ]);
 
@@ -166,6 +178,15 @@ class WebsiteController extends Controller
         return redirect()->route('webhome');
     }
 
+
+    public function userprofile(){
+
+        $user=User::where('id',auth()->user()->id)->get();
+
+        return view('frontend.pages.profile.userprofile',compact('user'));
+    }
+
+  
 
     
 

@@ -70,7 +70,7 @@ class PostController extends Controller
             'gallery_id'=>$gallery->id,
             'title'=>$request->title,
             'description'=>$request->description,
-            'name'=>$request->is_publish,
+            'name'=>$request->name,
             'profession'=>$request->profession,
             'institute'=>$request->institute,
             'is_publish'=>$request->is_publish

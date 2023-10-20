@@ -66,6 +66,7 @@ class PostController extends Controller
 
         Post::create([
 
+            'user_id'=>auth()->id(),
             'category_id'=>$request->category,
             'gallery_id'=>$gallery->id,
             'title'=>$request->title,

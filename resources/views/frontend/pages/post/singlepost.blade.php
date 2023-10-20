@@ -77,7 +77,7 @@
            {{$data->comment}}
             </p>
 
-            <div class="small d-flex justify-content-start">
+            <!-- <div class="small d-flex justify-content-start">
               <a href="#!" class="d-flex align-items-center me-3">
                 <i class="far fa-thumbs-up me-2"></i>
                 <p class="mb-0">Like</p>
@@ -90,11 +90,11 @@
                 <i class="fas fa-share me-2"></i>
                 <p class="mb-0">Share</p>
               </a>
-            </div>
+            </div> -->
           </div>
           @endforeach
           <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
-            <div class="d-flex flex-start w-100">
+            <!-- <div class="d-flex flex-start w-100">
               <img class="rounded-circle shadow-1-strong me-3"
                 src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp" alt="avatar" width="40"
                 height="40" />
@@ -102,12 +102,12 @@
                 <textarea class="form-control" id="textAreaExample" rows="4"
                   style="background: #fff;"></textarea>
                 <label class="form-label" for="textAreaExample">Reply</label>
-              </div>
+              </div> -->
             </div>
-            <div class="float-end mt-2 pt-1">
+            <!-- <div class="float-end mt-2 pt-1">
               <button type="button" class="btn btn-primary btn-sm">Send</button>
               <button type="button" class="btn btn-outline-primary btn-sm">Cancel</button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

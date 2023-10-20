@@ -8,7 +8,7 @@
         <div class="card">
           <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+              <img src="{{url('/uploads/'.auth()->user()->image)}}"
                 alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
                 style="width: 150px; z-index: 1">
               <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
@@ -18,7 +18,7 @@
             </div>
             <div class="ms-3" style="margin-top: 130px;">
               <h5>{{auth()->user()->name}}</h5>
-              <p>{{auth()->user()->country}}</p>
+              <span>{{auth()->user()->country}}</span>
             </div>
           </div>
           <div class="p-4 text-black" style="background-color: #f8f9fa;">
@@ -41,35 +41,57 @@
             <div class="mb-5">
               <p class="lead fw-normal mb-1">About</p>
               <div class="p-4" style="background-color: #f8f9fa;">
-                <p class="font-italic mb-1">Web Developer</p>
-                <p class="font-italic mb-1">Lives in New York</p>
-                <p class="font-italic mb-0">Photographer</p>
+                <p class="font-italic mb-1">{{auth()->user()->profession}}</p>
+                <p class="font-italic mb-1">{{auth()->user()->institute}}</p>
+                <p class="font-italic mb-0">{{auth()->user()->country}}</p>
               </div>
             </div>
             <div class="d-flex justify-content-between align-items-center mb-4">
-              <p class="lead fw-normal mb-0">Recent photos</p>
-              <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
+              <p class="lead fw-normal mb-0">Recent posts</p>
+              <!-- <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p> -->
             </div>
-            <div class="row g-2">
-              <div class="col mb-2">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
-                  alt="image 1" class="w-100 rounded-3">
-              </div>
-              <div class="col mb-2">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
-                  alt="image 1" class="w-100 rounded-3">
-              </div>
+         
+            <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+                    @if(count($posts)>0)
+                    @foreach($posts as $data)
+                    <div class="post-preview">
+                        <a href="{{route('singlepost.show',$data->id)}}">
+                            <h2 class="post-title">{{$data->title}}</h2>
+                            <!-- <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3> -->
+                            <img src="{{url('/uploads/'.$data->gallery->image)}}" style="width:20%" alt="image">
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            {{$data->name}}
+                            <br>
+                            {{$data->institute}}
+                         {{$data->profession}}
+                         {{$data->created_at}}
+                         </p>
+                       
+                        
+                    </div>
+                    @endforeach
+
+                    @else
+                    <h3>No post added yet</h3>
+                    @endif
+                    <!-- Divider-->
+                    <hr class="my-4" />
+              
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Pager-->
+                  
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                </div>
             </div>
-            <div class="row g-2">
-              <div class="col">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
-                  alt="image 1" class="w-100 rounded-3">
-              </div>
-              <div class="col">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
-                  alt="image 1" class="w-100 rounded-3">
-              </div>
-            </div>
+        </div>
+
+
           </div>
         </div>
       </div>

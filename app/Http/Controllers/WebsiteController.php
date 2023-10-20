@@ -55,11 +55,12 @@ class WebsiteController extends Controller
 
                 'name'=>'required',
                 'email'=>'required',
+                'user_image'=>'required',
                 'profession'=>'required',
                 'institute'=>'required',
                 'country'=>'required',
                 'password'=>'required',
-                    // 'user_image'=>'required',
+               
             
                
               
@@ -70,24 +71,25 @@ class WebsiteController extends Controller
             return redirect()->route('webhome');
         }
 
-        // $fileName='';
-        // if($request->hasFile('user_image'))
-        // {
-        //     $fileName=date('Ymdhis').'.'.$request->file('user_image')->getClientOriginalExtension();
-        //     $request->file('user_image')->storeAs('/uploads',$fileName);
+        $fileName='';
+        if($request->hasFile('user_image'))
+        {
+            $fileName=date('Ymdhis').'.'.$request->file('user_image')->getClientOriginalExtension();
+            $request->file('user_image')->storeAs('/uploads',$fileName);
 
          
-        // }
+        }
 
         User::create([
 
             'name'=>$request->name,
             'email'=>$request->email,
             'profession'=>$request->profession,
+            
             'institute'=>$request->institute,
             'country'=>$request->country,
-            'password'=>bcrypt($request->password)
-            // 'image'=>$fileName,
+            'password'=>bcrypt($request->password),
+            'image'=>$fileName,
            
 
            
@@ -114,7 +116,7 @@ class WebsiteController extends Controller
 
         }
 
-        $credentials=$request->except('_token');
+        $credentials=$request->only('email','password');
         if(auth()->attempt($credentials)){
             return redirect()->route('webhome');
         }
@@ -137,6 +139,7 @@ class WebsiteController extends Controller
     {
         $validate=Validator::make($request->all(),[
 
+                'category'=>'required',
                 'category'=>'required',
                 'gallery'=>'required',
                 'title'=>'required',
@@ -164,7 +167,7 @@ class WebsiteController extends Controller
         }
 
         Post::create([
-
+            'user_id'=>auth()->id(),
             'category_id'=>$request->category,
             'gallery_id'=>$gallery->id,
             'title'=>$request->title,
@@ -181,9 +184,11 @@ class WebsiteController extends Controller
 
     public function userprofile(){
 
+        $posts=Post::where('user_id',auth()->user()->id)->where('is_publish','publish')->get();
+
         $user=User::where('id',auth()->user()->id)->get();
 
-        return view('frontend.pages.profile.userprofile',compact('user'));
+        return view('frontend.pages.profile.userprofile',compact('user','posts'));
     }
 
   

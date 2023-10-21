@@ -35,7 +35,7 @@
 
       <td>{{$data->description}}</td>
       <td>{{$data->is_publish}}</td>
-      <td>{{$data->posted_by}}</td>
+      <td>{{$data->name}}</td>
      <td>
         <a href="{{route('post.show', $data->id)}}" class="btn btn-info my-2">View</a>
         <a href="{{route('post.destroy', $data->id)}}" class="btn btn-danger my-2">Delete</a>

@@ -24,16 +24,16 @@
           <div class="p-4 text-black" style="background-color: #f8f9fa;">
             <div class="d-flex justify-content-end text-center py-1">
               <div>
-                <p class="mb-1 h5">253</p>
-                <p class="small text-muted mb-0">Photos</p>
+                <p class="mb-1 h5">{{count($posts)}}</p>
+              <span>Posts</span>
               </div>
               <div class="px-3">
                 <p class="mb-1 h5">1026</p>
-                <p class="small text-muted mb-0">Followers</p>
+               <span>Followers</span>
               </div>
               <div>
                 <p class="mb-1 h5">478</p>
-                <p class="small text-muted mb-0">Following</p>
+                <span>Following</span>
               </div>
             </div>
           </div>
@@ -41,9 +41,9 @@
             <div class="mb-5">
               <p class="lead fw-normal mb-1">About</p>
               <div class="p-4" style="background-color: #f8f9fa;">
-                <p class="font-italic mb-1">{{auth()->user()->profession}}</p>
-                <p class="font-italic mb-1">{{auth()->user()->institute}}</p>
-                <p class="font-italic mb-0">{{auth()->user()->country}}</p>
+                <span>Prosession: {{auth()->user()->profession}}</span><br>
+               <span>Institute: {{auth()->user()->institute}}</span><br>
+                  <span>Country: {{auth()->user()->country}}</span>
               </div>
             </div>
             <div class="d-flex justify-content-between align-items-center mb-4">

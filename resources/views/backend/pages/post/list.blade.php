@@ -18,7 +18,9 @@
       <th scope="col">Description</th>
       <th scope="col">In Publish</th>
       <th scope="col">Posted by</th>
-      <th scope="col">Action</th>
+      <th scope="col">View</th>
+      <th scope="col">Delet</th>
+      <th scope="col">Edit</th>
       <th scope="col">Accept</th>
       <th scope="col">Reject</th>
     </tr>
@@ -37,11 +39,22 @@
       <td>{{$data->is_publish}}</td>
       <td>{{$data->name}}</td>
      <td>
-        <a href="{{route('post.show', $data->id)}}" class="btn btn-info my-2">View</a>
-        <a href="{{route('post.destroy', $data->id)}}" class="btn btn-danger my-2">Delete</a>
-        <a href="{{route('post.edit',$data->id)}}" class="btn btn-success my-2">Edit</a>
-     
+        <a href="{{route('post.show', $data->id)}}" class="btn btn-info my-2"><i
+                                class="fas fa-eye"></i></a>
+        </td>
+
+        <form  action="{{route('post.destroy',$data->id)}}" method="POST">
+          @csrf
+          @method('DELETE')
+       <td> 
+       <button class="btn btn-danger m-2" type="submit"><i class="fas fa-trash"></i></button>
       </td>
+        </form>
+       <td>
+         <a href="{{route('post.edit',$data->id)}}" class="btn btn-success my-2"><i class="fas fa-edit"></i></a>
+        </td>
+     
+     
       <td>
       <a href="{{route('post.accept', $data->id)}}" class="btn btn-primary my-2">Accept</a>
      

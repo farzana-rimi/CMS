@@ -11,13 +11,13 @@
     </tr>
   </thead>
   <tbody>
-    @foreach ($categories as $key=>$data)
+   
+  @foreach ($categories as $key=>$data)
     <tr>
       <th scope="row">{{$key+1}}</th>
       <td>{{$data->name}}</td>
-   
+    </tr>
     @endforeach
-
   </tbody>
 </table>
 
@@ -25,3 +25,6 @@
  
 
 @endsection
+
+
+

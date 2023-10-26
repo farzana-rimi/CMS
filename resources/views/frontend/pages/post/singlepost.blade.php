@@ -9,16 +9,21 @@
                     <div class="post-preview">
                         <a href="post.html">
                             <h2 class="post-title">{{$post->title}}</h2>
+                            <br>
                             <img src="{{url('/uploads/'.$post->gallery->image)}}" style="width:80%" alt="image">
+                            <br>
+                            <br>
                             <h3 class="post-subtitle">{{$post->description}}</h3>
                             
                         </a>
                         <p class="post-meta">
                             Posted by
+                            <br>
                             {{$post->name}}
                             <br>
+                            {{$post->profession}}
+                            <br>
                             {{$post->institute}}
-                         {{$post->profession}}
                          <br>
                          {{$post->created_at}}
                          </p>

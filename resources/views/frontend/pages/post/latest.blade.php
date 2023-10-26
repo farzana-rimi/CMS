@@ -9,7 +9,7 @@
                     <div class="post-preview">
                         <a href="{{route('singlepost.show',$data->id)}}">
                             <h2 class="post-title">{{$data->title}}</h2>
-                            <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
+                            <h3 class="post-subtitle"></h3>
                             <img src="{{url('/uploads/'.$data->gallery->image)}}" width=60 alt="image">
                         </a>
                         <p class="post-meta">

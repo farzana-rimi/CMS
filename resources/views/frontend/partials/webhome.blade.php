@@ -31,12 +31,24 @@
 
                             
     
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('webhome')}}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Category</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('webhome')}}">{{__('Home')}}</a></li>
+                   
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="">{{__('Categories')}}</a>
+                      
+
+                    </li>
+                        
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('latest.post')}}">Latest Posts</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('about')}}">About</a></li>
                           
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('contact')}}">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('contact')}}">{{__('Contact') }}</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" >Language
+                            <select  id="" onchange="location = this.options[this.selectedIndex].value;">
+                                <option @if(session()->get('locale')=='en') selected @endif  value="{{route('change.lang','en')}}">English</option>
+                                <option @if(session()->get('locale')=='bn') selected @endif value="{{route('change.lang','bn')}}">Bangla</option>
+                                <option @if(session()->get('locale')=='hind') selected @endif value="{{route('change.lang','hind')}}">Hindi</option>
+                            </select>
+                        </a></li>
                     @if(auth()->user())
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('web.logout')}}">Logout</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('create.post')}}">Create Post</a></li>

@@ -9,6 +9,7 @@ use App\Models\Post;
 use App\Models\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Validator;
 
 class WebsiteController extends Controller
@@ -189,6 +190,15 @@ class WebsiteController extends Controller
         $user=User::where('id',auth()->user()->id)->get();
 
         return view('frontend.pages.profile.userprofile',compact('user','posts'));
+    }
+
+    public function changelang($lang){
+
+        App::setLocale($lang);
+        session()->put('locale',$lang);
+
+        return redirect()->route('webhome');
+        
     }
 
   

@@ -35,7 +35,7 @@ class DashboardController extends Controller
 
         if($validate->fails())
         {
-        return redirect()->back()->withErrors($validate->messages());
+        return redirect()->back()->with("message","Validation failed");
         }
     
 
@@ -45,7 +45,7 @@ class DashboardController extends Controller
         return redirect()->route('dashboard')->withSuccess($validate->messages());
     }
 
-    return redirect()->back()->withErrors($validate->message());
+    return redirect()->back()->with("message","Invalid Credentials");
 }
 
 public function logout(){

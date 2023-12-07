@@ -12,4 +12,22 @@ class CategoryController extends Controller
         $categories=Category::all();
         return view('backend.pages.category.list',compact('categories'));
     }
+
+    public function create(){
+
+        return view('backend.pages.category.create');
+    }
+
+
+    public function store(Request $request){
+
+        Category::create([
+
+            "name"=>$request->name
+        ]);
+
+        return redirect()->route('category.list');
+    }
 }
+
+

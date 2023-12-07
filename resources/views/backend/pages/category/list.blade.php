@@ -1,7 +1,10 @@
 @extends('backend.partials.master')
 @section('content')
 
-
+<a class="btn btn-success" href="{{route('category.create')}}">Add Category</a>
+<br>
+<br>
+<br>
   <table class="table">
   <thead>
     <tr>

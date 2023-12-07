@@ -51,7 +51,9 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
     
     //for category
+    Route::get('/add-category',[CategoryController::class,'create'])->name('category.create');
     Route::get('/category-list', [CategoryController::class, 'list'])->name('category.list');
+    Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
    
   //for post
   Route::resource('post', PostController::class);

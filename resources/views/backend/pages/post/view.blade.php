@@ -8,7 +8,7 @@
 <div class="container">
     <p>Category: {{$show->category->name}}</p>
   <p>User Name: {{$show->title}}</p>
-  <img src="{{url('/uploads/'.$show->gallery->image)}}" width=80 alt="image">
+  <img src="{{url('/uploads/'.$show->gallery->image)}}" width="300" alt="image">
   <br>
   <br>
   <p>Description: {{$show->description}}</p>

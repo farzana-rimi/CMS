@@ -41,6 +41,22 @@ class CategoryController extends Controller
 
         return redirect()->route('category.list');
     }
+
+    public function edit($id){
+
+
+    }
+
+    public function view($id){
+        $category=Category::find($id);
+        return view('backend.pages.category.view',compact('category'));
+    }
+
+    public function delete($id){
+
+
+
+    }
 }
 
 

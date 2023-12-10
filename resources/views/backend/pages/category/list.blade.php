@@ -29,7 +29,7 @@
       <td>
 
       <a class="btn btn-warning" href="">Edit</a>
-      <a  class="btn btn-info" href="">View</a>
+      <a  class="btn btn-info" href="{{route('category.view',$data->id)}}">View</a>
       <a class="btn btn-danger"  href="">Delete</a>
       </td>
     </tr>

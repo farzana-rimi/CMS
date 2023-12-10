@@ -10,6 +10,9 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Title</th>
+      <th scope="col">Action</th>
       
     </tr>
   </thead>
@@ -19,6 +22,16 @@
     <tr>
       <th scope="row">{{$key+1}}</th>
       <td>{{$data->name}}</td>
+      <td>
+      <img src="{{url('/uploads/'.$data->image)}}" width=80 alt="image">
+      </td>
+      <td>{{$data->title}}</td>
+      <td>
+
+      <a class="btn btn-warning" href="">Edit</a>
+      <a  class="btn btn-info" href="">View</a>
+      <a class="btn btn-danger"  href="">Delete</a>
+      </td>
     </tr>
     @endforeach
   </tbody>

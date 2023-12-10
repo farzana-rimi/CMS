@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=>'language'],function(){
 Route::get('/', [WebsiteController::class, 'webhome'])->name('webhome');
+Route::get('/category/show',[WebsiteController::class,'categoryshow'])->name('category.show');
+Route::get('/post/under/category/{id}',[WebsiteController::class,'post_category'])->name('post.category');
 Route::get('/show/post/{id}', [WebsiteController::class, 'showpost'])->name('singlepost.show');
 Route::get('/latest/post', [WebsiteController::class, 'latestpost'])->name('latest.post');
 Route::get('/contact', [WebsiteController::class, 'contact'])->name('contact');

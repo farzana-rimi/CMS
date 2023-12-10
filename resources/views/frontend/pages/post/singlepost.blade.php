@@ -68,7 +68,7 @@
           <div class="card-body">
             <div class="d-flex flex-start align-items-center">
               <img class="rounded-circle shadow-1-strong me-3"
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp" alt="avatar" width="60"
+                src="{{url('/uploads/'.$data->user->image)}}" alt="avatar" width="60"
                 height="60" />
               <div>
                 <h5 class="">{{$data->user->name}}</h5>

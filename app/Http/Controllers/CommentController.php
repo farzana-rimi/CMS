@@ -31,7 +31,7 @@ class CommentController extends Controller
 
         ]);
 
-           return 'comment added successfully it will be visible after admin approve';
+           return redirect()->back();
 
         }
     

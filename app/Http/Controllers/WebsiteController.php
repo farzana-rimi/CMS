@@ -130,6 +130,11 @@ class WebsiteController extends Controller
         auth()->logout();
         return redirect()->route('webhome');
     }
+
+    public function categoryshow(){
+            $categories=Category::all();
+        return view('frontend.pages.category.categoryshow',compact('categories'));
+    }
     
     public function createpost(){
         $categories=Category::all();
@@ -199,6 +204,12 @@ class WebsiteController extends Controller
 
         return redirect()->route('webhome');
         
+    }
+
+    public function post_category($id){
+
+        $postundercategory=Post::where('category_id',$id)->get();
+        return view('frontend.pages.category.postundercategory',compact('postundercategory'));
     }
 
   

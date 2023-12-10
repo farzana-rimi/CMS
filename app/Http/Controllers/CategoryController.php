@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -21,9 +22,21 @@ class CategoryController extends Controller
 
     public function store(Request $request){
 
+
+        $fileName='';
+        if($request->hasFile('category_img'))
+        {
+            $fileName=date('Ymdhis').'.'.$request->file('category_img')->getClientOriginalExtension();
+            $request->file('category_img')->storeAs('/uploads',$fileName);
+
+           
+        }
         Category::create([
 
-            "name"=>$request->name
+            "name"=>$request->name,
+            "image"=>$fileName,
+            "title"=>$request->title,
+            
         ]);
 
         return redirect()->route('category.list');

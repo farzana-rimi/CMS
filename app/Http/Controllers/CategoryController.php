@@ -48,7 +48,7 @@ class CategoryController extends Controller
         return view('backend.pages.category.edit',compact('find'));
     }
 
-    
+
     public function update(Request $request, $id){
         $fileName='';
         if($request->hasFile('category_img'))
@@ -78,8 +78,8 @@ class CategoryController extends Controller
 
     public function delete($id){
 
-
-
+        Category::find($id)->delete();
+        return redirect()->route('category.list');
     }
 }
 

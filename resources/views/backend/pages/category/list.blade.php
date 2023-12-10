@@ -30,7 +30,7 @@
 
       <a class="btn btn-warning" href="{{route('category.edit',$data->id)}}">Edit</a>
       <a  class="btn btn-info" href="{{route('category.view',$data->id)}}">View</a>
-      <a class="btn btn-danger"  href="">Delete</a>
+      <a class="btn btn-danger"  href="{{route('category.delete',$data->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

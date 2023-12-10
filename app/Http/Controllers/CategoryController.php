@@ -42,7 +42,31 @@ class CategoryController extends Controller
         return redirect()->route('category.list');
     }
 
+
     public function edit($id){
+        $find=Category::find($id);
+        return view('backend.pages.category.edit',compact('find'));
+    }
+
+    
+    public function update(Request $request, $id){
+        $fileName='';
+        if($request->hasFile('category_img'))
+        {
+            $fileName=date('Ymdhis').'.'.$request->file('category_img')->getClientOriginalExtension();
+            $request->file('category_img')->storeAs('/uploads',$fileName);
+
+           
+        }
+
+        $category=Category::find($id);
+        $category->update([
+            "name"=>$request->name,
+            "image"=>$fileName,
+            "title"=>$request->title
+        ]);
+
+        return redirect()->route('category.list');
 
 
     }
